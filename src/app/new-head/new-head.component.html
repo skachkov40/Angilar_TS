@@ -1,0 +1,26 @@
+<h1>{{ appTitle }}</h1>
+
+<div class="okno1" *ngIf="vid1">
+    <button id="btnNew" (click)="btnTransl()">Новый перевод</button>
+    <ul>
+        <li *ngFor="let Trans of trtext; let i = index">
+            <strong>{{i+1}}</strong>
+            <small>{{ Trans.date | date:'dd MMMM yyyy HH:mm:ss':'ru' }}</small>
+            <br> {{Trans.title}}
+        </li>
+    </ul>
+</div>
+
+<div class="okno2" *ngIf="vid2">
+    <span><button id="btnBack" (click)="btnBack()">Назад</button></span>
+    <span><button id="btnOk" (click)="btnTranslOk()">Перевести</button></span>
+    <br />
+    <textarea id="pole1" placeholder="Введите текст для перевода">
+    </textarea>
+
+</div>
+
+<div class="okno2" *ngIf="vid3">
+    <textarea id="pole2">
+    </textarea>
+</div>
