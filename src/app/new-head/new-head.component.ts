@@ -22,6 +22,7 @@ export class NewHeadComponent implements OnInit {
     this.vid3 = false
   }
 
+  
   ngOnInit(): void {
   }
 
