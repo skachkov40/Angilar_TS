@@ -45,6 +45,14 @@
         box-shadow: 2px 2px 5px 2px silver;
     }
     
+    #btnBack2 {
+        width: 600px;
+        height: 40px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        box-shadow: 2px 2px 5px 2px silver;
+    }
+    
     #btnOk {
         width: 290px;
         height: 40px;

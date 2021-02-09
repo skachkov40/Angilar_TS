@@ -15,12 +15,14 @@
     <span><button id="btnBack" (click)="btnBack()">Назад</button></span>
     <span><button id="btnOk" (click)="btnTranslOk()">Перевести</button></span>
     <br />
-    <textarea id="pole1" placeholder="Введите текст для перевода">
+    <textarea id="pole1" placeholder="Введите текст для перевода" [(ngModel)]="textplus">
     </textarea>
 
 </div>
 
 <div class="okno2" *ngIf="vid3">
+    <button id="btnBack" (click)="btnBack()">Назад</button><br />
     <textarea id="pole2">
+        {{textplus}}
     </textarea>
 </div>

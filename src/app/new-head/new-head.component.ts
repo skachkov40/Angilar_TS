@@ -6,12 +6,16 @@ import {Trans} from '../app.component';
   templateUrl: './new-head.component.html',
   styleUrls: ['./new-head.component.css']
 })
+
+
 export class NewHeadComponent implements OnInit {
 
-  appTitle: String
-  vid1: boolean
-  vid2: boolean
-  vid3: boolean
+  appTitle: String;
+  vid1: boolean;
+  vid2: boolean;
+  vid3: boolean;
+  textplus!: string;
+  i!:number;
 
   @Input() trtext:Trans[] = []
 
@@ -40,9 +44,12 @@ export class NewHeadComponent implements OnInit {
   }
   btnTranslOk () {
     this.vid1 = false
-    this.appTitle = 'Просмотр ранее переведенного текста'
+    this.appTitle = 'Просмотр переведенного текста'
     this.vid2 = false
     this.vid3 = true
+    this.trtext.push({id: this.i, title: this.textplus, date: new Date()})
+    
+    
 
   }
 
