@@ -4,7 +4,7 @@
     <button id="btnNew" (click)="btnTransl()">Новый перевод</button>
     <ul>
         <li *ngFor="let Trans of trtext; let i = index">
-            <strong>{{i+1}}</strong>
+            <strong>{{i+1}}  </strong>
             <small>{{ Trans.date | date:'dd MMMM yyyy HH:mm:ss':'ru' }}</small>
             <br> {{Trans.title}}
         </li>
@@ -21,7 +21,7 @@
 </div>
 
 <div class="okno2" *ngIf="vid3">
-    <button id="btnBack" (click)="btnBack()">Назад</button><br />
+    <button id="btnBack2" (click)="btnBack()">Назад</button><br />
     <textarea id="pole2">
         {{textplus}}
     </textarea>
