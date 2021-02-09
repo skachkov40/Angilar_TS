@@ -48,6 +48,7 @@ export class NewHeadComponent implements OnInit {
     this.vid2 = false
     this.vid3 = true
     this.trtext.push({id: this.i, title: this.textplus, date: new Date()})
+    //localStorage.setItem()
     
     
 
