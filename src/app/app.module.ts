@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NewHeadComponent } from './new-head/new-head.component';
 import { FormsModule } from '@angular/forms';
 
+
 registerLocaleData(localeRu, 'ru');
 
 @NgModule({
@@ -18,9 +19,11 @@ registerLocaleData(localeRu, 'ru');
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

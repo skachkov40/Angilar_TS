@@ -7,7 +7,6 @@ import {Trans} from '../app.component';
   styleUrls: ['./new-head.component.css']
 })
 
-
 export class NewHeadComponent implements OnInit {
 
   appTitle: String;
@@ -16,8 +15,11 @@ export class NewHeadComponent implements OnInit {
   vid3: boolean;
   textplus!: string;
   i!:number;
+  data:any
+  x:any
 
-  @Input() trtext:Trans[] = []
+  
+  @Input() trtext: Trans[] = [];
 
   constructor() { 
     this.appTitle = 'Список ранее переведенных текстов'
@@ -28,6 +30,12 @@ export class NewHeadComponent implements OnInit {
 
   
   ngOnInit(): void {
+    for (var x = 1, len = localStorage.length; x < len; x++) {
+    this.data = JSON.parse(localStorage.getItem('saveText') || '');
+    this.trtext.push({id: x, title: this.data.value, date: this.data.date})
+    console.log(this.data, x+1);
+    }
+    
   }
 
   btnTransl () {
@@ -35,20 +43,25 @@ export class NewHeadComponent implements OnInit {
     this.vid2 = true
     this.appTitle = 'Перевод нового текста'
     this.vid3 = false
+    this.textplus = ''
   }
   btnBack () {
     this.vid1 = true
     this.appTitle = 'Список ранее переведенных текстов'
     this.vid2 = false
     this.vid3 = false
+    
   }
   btnTranslOk () {
     this.vid1 = false
     this.appTitle = 'Просмотр переведенного текста'
     this.vid2 = false
     this.vid3 = true
-    this.trtext.push({id: this.i, title: this.textplus, date: new Date()})
-    //localStorage.setItem()
+    this.i++
+    this.trtext.push({id: this.i+1, title: this.textplus, date: new Date()})    
+    localStorage.setItem('saveText', JSON.stringify({ key: this.i+1 ,value: this.textplus, date: new Date()}))
+    console.log(this.i, this.textplus);
+
     
     
 

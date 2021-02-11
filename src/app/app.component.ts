@@ -12,12 +12,17 @@ export interface Trans {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    
-    text1 = 'Какой-то текст который когда-то переводился, какой-то текст который когда-то переводился, какой-то текст который когда-то переводился'
 
-    public trtext: Trans[] = [
-      { id: 1, title: this.text1, date: new Date() },
-      { id: 2, title: this.text1, date: new Date() },
-      { id: 3, title: this.text1, date: new Date() },
-    ]
+  num = 11
+  text1 = 'Какой-то текст который когда-то переводился, какой-то текст который когда-то переводился'  
+  
+
+    public trtext: Trans[] = [];
+
+    
+      //{ id: this.num, title: this.text1, date: new Date() },
+      //{ id: this.num, title: this.text1, date: new Date() }
+    //];
+     
+     
 }
