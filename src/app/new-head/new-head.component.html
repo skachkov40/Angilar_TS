@@ -3,10 +3,10 @@
 <div class="okno1" *ngIf="vid1">
     <button id="btnNew" (click)="btnTransl()">Новый перевод</button>
     <ul>
-        <li *ngFor="let Trans of trtext; let i = index">
+        <li *ngFor="let data of transltext; let i = index">
             <strong>{{i+1}}  </strong>
-            <small>{{ Trans.date | date:'dd MMMM yyyy HH:mm:ss':'ru' }}</small>
-            <br> {{Trans.title}}
+            <small>{{ data.date | date:'dd MMMM yyyy HH:mm:ss':'ru' }}</small>
+            <br> {{data.title}}
         </li>
     </ul>
 </div>

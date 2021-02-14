@@ -1,5 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Trans} from '../app.component';
+import {Component, OnInit} from '@angular/core';
+
+export interface data {
+  title: string;
+  date: any;
+}
 
 @Component({
   selector: 'app-new-head',
@@ -14,30 +18,20 @@ export class NewHeadComponent implements OnInit {
   vid2: boolean;
   vid3: boolean;
   textplus!: string;
-  i!:number;
-  data:any
-  x:any
-
+  transltext:data[];
   
-  @Input() trtext: Trans[] = [];
-
   constructor() { 
-    this.appTitle = 'Список ранее переведенных текстов'
-    this.vid1 = true
-    this.vid2 = false
-    this.vid3 = false
+    this.appTitle = 'Список ранее переведенных текстов';
+    this.vid1 = true;
+    this.vid2 = false;
+    this.vid3 = false;
+    this.transltext = (JSON.parse(localStorage.getItem('mySave') || '{}'));
+      
   }
-
   
   ngOnInit(): void {
-    for (var x = 1, len = localStorage.length; x < len; x++) {
-    this.data = JSON.parse(localStorage.getItem('saveText') || '');
-    this.trtext.push({id: x, title: this.data.value, date: this.data.date})
-    console.log(this.data, x+1);
-    }
-    
+   
   }
-
   btnTransl () {
     this.vid1 = false
     this.vid2 = true
@@ -53,14 +47,17 @@ export class NewHeadComponent implements OnInit {
     
   }
   btnTranslOk () {
-    this.vid1 = false
-    this.appTitle = 'Просмотр переведенного текста'
-    this.vid2 = false
-    this.vid3 = true
-    this.i++
-    this.trtext.push({id: this.i+1, title: this.textplus, date: new Date()})    
-    localStorage.setItem('saveText', JSON.stringify({ key: this.i+1 ,value: this.textplus, date: new Date()}))
-    console.log(this.i, this.textplus);
+    this.vid1 = false;
+    this.appTitle = 'Просмотр переведенного текста';
+    this.vid2 = false;
+    this.vid3 = true;
+    if (this.transltext.length > 0) {
+      this.transltext.push({title: this.textplus, date: new Date()})
+    } else {
+      this.transltext = [{title: this.textplus, date: new Date()}]
+    };  
+    localStorage.setItem('mySave', JSON.stringify(this.transltext));
+    console.log(this.transltext);
 
     
     
