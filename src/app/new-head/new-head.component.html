@@ -3,10 +3,10 @@
 <div class="okno1" *ngIf="vid1">
     <button id="btnNew" (click)="btnTransl()">Новый перевод</button>
     <ul>
-        <li *ngFor="let data of transltext; let i = index">
+        <li *ngFor="let data of transltext; let i = index" (click)="onClick(data.title)">
             <strong>{{i+1}}  </strong>
             <small>{{ data.date | date:'dd MMMM yyyy HH:mm:ss':'ru' }}</small>
-            <br> {{data.title}}
+            <br>{{data.title}}
         </li>
     </ul>
 </div>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="okno2" *ngIf="vid3">
-    <button id="btnBack2" (click)="btnBack()">Назад</button><br />
+    <button id="btnBegin" (click)="btnBegin()">Назад</button><br />
     <textarea id="pole2">
         {{textplus}}
     </textarea>

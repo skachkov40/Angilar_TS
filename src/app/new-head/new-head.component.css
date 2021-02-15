@@ -10,7 +10,11 @@
     }
     
     li {
-        list-style: none;
+        max-height: 52px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
         border: 1px solid silver;
         border-radius: 5px;
         background-color: rgb(240, 240, 240);
@@ -25,6 +29,8 @@
     strong {
         /*visibility: hidden;*/
     }
+    
+    p {}
     
     small {
         color: silver;
@@ -73,5 +79,5 @@
         height: 200px;
         padding-top: 10px;
         resize: vertical;
-        box-shadow: 2px 2px 5px 2pxnpn silver;
+        box-shadow: 2px 2px 5px 2px silver;
     }
