@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-newapp": {
+    "translapp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-newapp",
+            "outputPath": "dist/translapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-newapp:build"
+            "browserTarget": "translapp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "my-newapp:build:production"
+              "browserTarget": "translapp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-newapp:build"
+            "browserTarget": "translapp:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "my-newapp:serve"
+            "devServerTarget": "translapp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "my-newapp:serve:production"
+              "devServerTarget": "translapp:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "my-newapp"
+  "defaultProject": "translapp"
 }

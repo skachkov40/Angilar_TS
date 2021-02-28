@@ -1,29 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { registerLocaleData } from '@angular/common';
-import localeRu from '@angular/common/locales/ru';
+import { FormsModule } from '@angular/forms'
+import { Datatext } from './models/datatext'
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NewHeadComponent } from './new-head/new-head.component';
-import { FormsModule } from '@angular/forms';
-
-
-registerLocaleData(localeRu, 'ru');
+import { ListComponent } from './list/list.component';
+import { DatastrService } from './services/datastr.service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewHeadComponent
+    ListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    
+    FormsModule
+
   ],
-  providers: [],
+  providers: [
+    DatastrService,
+    Datatext
+  ],
   bootstrap: [AppComponent]
 })
-
 export class AppModule { }

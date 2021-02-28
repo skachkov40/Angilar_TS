@@ -1,0 +1,9 @@
+<div class="list">
+    <ul>
+        <li *ngFor="let text of texts; let i = index">
+            <strong>{{i+1}}  </strong>
+            <small>{{ text.date | date:'dd MMMM yyyy HH:mm:ss':'ru' }}</small>
+            <br>{{text.title}}
+        </li>
+    </ul>
+</div>

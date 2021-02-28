@@ -1,0 +1,20 @@
+li {
+    max-height: 52px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    border: 1px solid silver;
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    margin-left: -40px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 2px 2px 5px 2px silver;
+}
+
+small {
+    color: silver;
+}
