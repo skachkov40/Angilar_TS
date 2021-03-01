@@ -6,15 +6,22 @@ import { Datatext } from './models/datatext'
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { DatastrService } from './services/datastr.service'
+import { AppRoutingModule } from './app-routing.module'
+import { from } from 'rxjs';
+import { ViewComponent } from './view/view.component';
+import { TranslComponent } from './transl/transl.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent
+    ListComponent,
+    ViewComponent,
+    TranslComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
 
   ],
   providers: [

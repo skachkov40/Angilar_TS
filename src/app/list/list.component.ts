@@ -10,6 +10,7 @@ import { DatastrService } from '../services/datastr.service'
 
 export class ListComponent implements OnInit {
 texts!: Datatext[];
+selectText!: Datatext;
 
 constructor (private datastrService: DatastrService) {}
 
@@ -19,6 +20,14 @@ ngOnInit(){
 
 getTexts (): void {
   this.texts = this.datastrService.getTexts()
+}
+
+btnTransl() {
+
+}
+
+onSelect(text:any) :void {
+  this.selectText = text;
 }
 
 }

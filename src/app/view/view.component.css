@@ -1,0 +1,15 @@
+#pole {
+    width: 795px;
+    height: 400px;
+    padding-top: 10px;
+    resize: vertical;
+    box-shadow: 2px 2px 5px 2px silver;
+}
+
+#btnBack {
+    width: 800px;
+    height: 40px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px 2px silver;
+}

@@ -18,3 +18,10 @@ li {
 small {
     color: silver;
 }
+
+#btnTransl {
+    width: 800px;
+    height: 40px;
+    margin-right: 10px;
+    box-shadow: 2px 2px 5px 2px silver;
+}
