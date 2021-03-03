@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Datatext } from '../models/datatext';
 import { DatastrService } from '../services/datastr.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -10,9 +11,11 @@ import { DatastrService } from '../services/datastr.service'
 
 export class ListComponent implements OnInit {
 texts!: Datatext[];
-selectText!: Datatext;
 
-constructor (private datastrService: DatastrService) {}
+@Output() data = new EventEmitter();
+
+
+constructor (private datastrService: DatastrService, private router: Router) {}
 
 ngOnInit(){
   this.getTexts();
@@ -22,12 +25,9 @@ getTexts (): void {
   this.texts = this.datastrService.getTexts()
 }
 
-btnTransl() {
+onClick(text:string) {
 
-}
-
-onSelect(text:any) :void {
-  this.selectText = text;
+this.router.navigate(['view', text]);
 }
 
 }

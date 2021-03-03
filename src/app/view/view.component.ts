@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Datatext } from '../models/datatext';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view',
@@ -7,18 +7,25 @@ import { Datatext } from '../models/datatext';
   styleUrls: ['./view.component.css']
 })
 export class ViewComponent implements OnInit {
+ text: string = "";
+  constructor(private activateRoute: ActivatedRoute) {
 
-  constructor() {
+    this.text = activateRoute.snapshot.params['text'];
+    console.log(this.activateRoute, this.text);
 
-  }
+   }
 
-  @Input() selectText!: string;
+
+
+
 
   ngOnInit(): void {
+
+
+
   }
 
-  btnBack () {
+  getText(): void {
 
   }
-
 }

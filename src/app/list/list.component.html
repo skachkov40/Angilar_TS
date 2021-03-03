@@ -1,7 +1,7 @@
 <div class="list">
     <button id="btnTransl" routerLink="/transl">Новый перевод</button>
     <ul>
-        <li *ngFor="let text of texts; let i = index" routerLink="/view">
+        <li *ngFor="let text of texts; let i = index" (click)="onClick(text.title)">
             <strong>{{i+1}}</strong>
             <small>{{ text.date | date:'dd MMMM yyyy HH:mm:ss':'ru' }}</small>
             <br>{{text.title}}

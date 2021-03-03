@@ -1,22 +1,22 @@
 #pole1 {
-    width: 795px;
+    width: 785px;
     height: 200px;
     padding-top: 10px;
+    padding-left: 15px;
     resize: vertical;
     box-shadow: 2px 2px 5px 2px silver;
 }
 
 #btnOk {
-    width: 190px;
+    width: 192px;
     height: 40px;
     margin-left: 10px;
     box-shadow: 2px 2px 5px 2px silver;
 }
 
 #btnBack {
-    width: 190px;
+    width: 193px;
     height: 40px;
-    margin-right: 10px;
     margin-bottom: 20px;
     box-shadow: 2px 2px 5px 2px silver;
 }
