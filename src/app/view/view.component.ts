@@ -11,7 +11,7 @@ export class ViewComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute) {
 
     this.text = activateRoute.snapshot.params['text'];
-    console.log(this.activateRoute, this.text);
+    //console.log(this.activateRoute, this.text);
 
    }
 
@@ -25,7 +25,5 @@ export class ViewComponent implements OnInit {
 
   }
 
-  getText(): void {
 
-  }
 }

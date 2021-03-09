@@ -1,8 +1,22 @@
 <div class="transl">
     <span><button id="btnBack" routerLink="/list">Назад</button></span>
-    <span><button id="btnOk" routerLink="/view">Перевести</button></span>
-    <span><button id="btnOk" >Исходный</button></span>
-    <span><button id="btnOk" >Целевой</button></span>
+    <span><button id="btnOk" (click)="onTransl(textplus, langStart, langEnd)">Перевести</button></span>
+    <span class="sellang1">
+        <select  id="selectvalue" [(ngModel)]="langStart">
+        <option selected value="ru">RU</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+      </select>
+    </span>
+    <span class="sellang1">
+      <select  id="selectvalue" [(ngModel)]="langEnd">
+        <option value="ru">RU</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+      </select>
+    </span>
     <br />
     <textarea id="pole1" placeholder="Введите текст для перевода" [(ngModel)]="textplus">
   </textarea>
